@@ -1,194 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xwealth - Invest Smarter</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
-    
-    body { 
-      background: #0a0f1e; 
-      color: white; 
-      min-height: 100vh;
-    }
+<style>
+  /* ... keep everything above ... */
 
-    /* NAVBAR */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .logo { 
-      font-size: 24px; 
-      font-weight: 800; 
-      color: #22c55e; 
-    }
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
-    .nav-login {
-      color: #cbd5e1;
-      text-decoration: none;
-      font-weight: 500;
-    }
-    .btn-green {
-      background: #22c55e;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 10px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      transition: 0.2s;
-    }
-    .btn-green:hover { background: #16a34a; transform: translateY(-1px); }
+  /* HERO SECTION - BIGGER TEXT */
+  .hero {
+    text-align: center;
+    padding: 100px 20px 80px; /* more space */
+    max-width: 800px; /* wider */
+    margin: 0 auto;
+  }
+  .hero h1 {
+    font-size: 64px; /* was 48px */
+    font-weight: 900; /* bolder */
+    line-height: 1.1;
+    margin-bottom: 25px;
+    letter-spacing: -1px; /* looks pro */
+  }
+  .hero h1 .green {
+    color: #22c55e;
+    display: block; /* puts Xwealth on its own line */
+  }
+  .hero p {
+    color: #cbd5e1; /* brighter */
+    font-size: 22px; /* was 18px */
+    line-height: 1.6;
+    margin-bottom: 50px;
+    font-weight: 400;
+  }
+  .btn-large {
+    font-size: 20px; /* bigger button text */
+    padding: 18px 50px; /* bigger button */
+    border-radius: 14px;
+  }
 
-    /* HERO SECTION */
-    .hero {
-      text-align: center;
-      padding: 80px 20px 60px;
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    .hero h1 {
-      font-size: 48px;
-      font-weight: 800;
-      line-height: 1.2;
-      margin-bottom: 20px;
-    }
-    .hero h1 .green {
-      color: #22c55e;
-    }
-    .hero p {
-      color: #94a3b8;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 40px;
-    }
-    .btn-large {
-      font-size: 18px;
-      padding: 16px 40px;
-      border-radius: 12px;
-    }
+  /* WHY CHOOSE - BIGGER TOO */
+  .why h2 {
+    font-size: 48px; /* was 36px */
+  }
+  .card h3 {
+    font-size: 24px; /* was 20px */
+  }
+  .card p {
+    font-size: 17px; /* was default */
+  }
 
-    /* WHY CHOOSE SECTION */
-    .why {
-      padding: 80px 5%;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .why h2 {
-      font-size: 36px;
-      font-weight: 700;
-      margin-bottom: 50px;
-      position: relative;
-      display: inline-block;
-    }
-    .why h2::after {
-      content: '';
-      width: 80px;
-      height: 4px;
-      background: #22c55e;
-      display: block;
-      margin: 12px auto 0;
-      border-radius: 2px;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: #111827;
-      padding: 30px 25px;
-      border-radius: 16px;
-      border: 1px solid #1f2937;
-      transition: 0.3s;
-    }
-    .card:hover {
-      border-color: #22c55e;
-      transform: translateY(-5px);
-    }
-    .card-icon {
-      font-size: 40px;
-      margin-bottom: 20px;
-    }
-    .card h3 {
-      font-size: 20px;
-      margin-bottom: 12px;
-      color: #22c55e;
-    }
-    .card p {
-      color: #94a3b8;
-      line-height: 1.6;
-    }
-
-    /* MOBILE */
-    @media(max-width: 600px) {
-      .hero h1 { font-size: 36px; }
-      .why h2 { font-size: 28px; }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- NAVBAR -->
-  <div class="navbar">
-    <div class="logo">Xwealth</div>
-    <div class="nav-right">
-      <a href="/login.html" class="nav-login">Login</a>
-      <a href="/signup.html" class="btn-green">Get Started</a>
-    </div>
-  </div>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Invest<br>Smarter with<br><span class="green">Xwealth</span></h1>
-    <p>AI-powered investing platform. Grow your wealth with data-driven decisions.</p>
-    <a href="/signup.html" class="btn-green btn-large">Start Investing Now</a>
-  </div>
-
-  <!-- WHY CHOOSE -->
-  <div class="why">
-    <h2>Why Choose Xwealth</h2>
-    <div class="cards">
-      
-      <div class="card">
-        <div class="card-icon">🤖</div>
-        <h3>AI-Powered Insights</h3>
-        <p>Our advanced AI analyzes market trends 24/7 to give you smart investment recommendations that maximize your returns.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">📊</div>
-        <h3>Data-Driven Decisions</h3>
-        <p>Stop guessing. Make confident investment choices backed by real-time data, analytics, and proven strategies.</p>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">🔒</div>
-        <h3>Bank-Level Security</h3>
-        <p>Your funds and data are protected with military-grade encryption. Invest with peace of mind knowing you're secure.</p>
-      </div>
-
-    </div>
-  </div>
-
-  <script type="module">
-    import { auth } from './src/firebase.js'
-    import { onAuthStateChanged } from "firebase/auth";
-    
-    onAuthStateChanged(auth, (user) => {
-      if (user) window.location.href = "/dashboard.html"
-    });
-  </script>
-</body>
-        </html>
+  /* MOBILE */
+  @media(max-width: 600px) {
+    .hero h1 { font-size: 44px; } /* was 36px */
+    .hero p { font-size: 18px; }
+    .why h2 { font-size: 32px; }
+  }
+    </style>
