@@ -1,12 +1,94 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XWealth</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xwealth - Invest & Grow Your Wealth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style> 
+    body { font-family: 'Inter', sans-serif; } 
+    @keyframes marquee {
+      0%   { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    .animate-marquee {
+      display: inline-block;
+      animation: marquee 25s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="bg-[#0a0f1e] text-white">
+
+  <!-- Floating Live Activity Ticker -->
+  <div class="bg-green-600 text-white text-sm font-semibold py-2 overflow-hidden sticky top-0 z-50">
+    <div class="animate-marquee whitespace-nowrap">
+      <span class="mx-8">🎉 John D. just withdrew $2,400</span>
+      <span class="mx-8">💰 Maria S. earned $1,000 reward</span>
+      <span class="mx-8">🚀 David K. invested $500 in Pro Plan</span>
+      <span class="mx-8">✅ Aisha B. withdrawal approved: $3,200</span>
+      <span class="mx-8">🔥 Michael R. earned $750 bonus</span>
+      <span class="mx-8">🎉 Sarah L. just withdrew $1,850</span>
+      <span class="mx-8">🎉 John D. just withdrew $2,400</span>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="flex justify-between items-center p-6 max-w-7xl mx-auto">
+    <h1 class="text-2xl font-extrabold text-green-400">XWEALTH</h1>
+    <div class="space-x-4">
+      <button class="text-gray-300 hover:text-white">Login</button>
+      <button class="bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg font-semibold">Get Started</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="text-center py-20 px-4">
+    <h2 class="text-5xl font-extrabold mb-4">Grow Your Wealth with <span class="text-green-400">Xwealth</span></h2>
+    <p class="text-gray-400 max-w-2xl mx-auto mb-8">Secure, fast, and profitable investment plans. Start with $100 and earn up to 200% ROI.</p>
+    <button class="bg-green-600 hover:bg-green-500 px-8 py-4 rounded-xl text-lg font-bold">Invest Now</button>
+  </section>
+
+  <!-- Investment Plans -->
+  <section class="py-16 px-4 max-w-6xl mx-auto">
+    <h3 class="text-3xl font-bold text-center mb-12">Our Investment Plans</h3>
+    <div class="grid md:grid-cols-3 gap-8">
+      
+      <!-- Starter -->
+      <div class="bg-[#111827] p-8 rounded-2xl border-gray-800 hover:border-green-500 transition">
+        <h4 class="text-xl font-bold mb-2">Starter Plan</h4>
+        <p class="text-4xl font-extrabold text-green-400 mb-4">$100 <span class="text-sm text-gray-400">min</span></p>
+        <p class="text-gray-400 mb-6">200% ROI in 7 Days</p>
+        <button class="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-semibold">Invest Now</button>
+      </div>
+
+      <!-- Pro -->
+      <div class="bg-[#111827] p-8 rounded-2xl border-2 border-green-500 scale-105">
+        <p class="text-green-400 text-sm font-bold mb-2">MOST POPULAR</p>
+        <h4 class="text-xl font-bold mb-2">Pro Plan</h4>
+        <p class="text-4xl font-extrabold text-green-400 mb-4">$500 <span class="text-sm text-gray-400">min</span></p>
+        <p class="text-gray-400 mb-6">200% ROI in 14 Days</p>
+        <button class="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-semibold">Invest Now</button>
+      </div>
+
+      <!-- Elite -->
+      <div class="bg-[#111827] p-8 rounded-2xl border-gray-800 hover:border-green-500 transition">
+        <h4 class="text-xl font-bold mb-2">Elite Plan</h4>
+        <p class="text-4xl font-extrabold text-green-400 mb-4">$1000 <span class="text-sm text-gray-400">min</span></p>
+        <p class="text-gray-400 mb-6">200% ROI in 30 Days</p>
+        <button class="w-full bg-green-600 hover:bg-green-500 py-3 rounded-lg font-semibold">Invest Now</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 text-gray-500 border-t border-gray-800 mt-12">
+    © 2026 Xwealth. All rights reserved.
+  </footer>
+
+</body>
+      </html>
