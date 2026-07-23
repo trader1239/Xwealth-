@@ -2,27 +2,141 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>WealthX - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xwealth - Invest Smarter</title>
   <style>
-    body { font-family: Arial; text-align: center; padding: 50px; background: #0f172a; color: white; }
-    a, button { padding: 12px 24px; background: #22c55e; color: white; border: none; border-radius: 8px; text-decoration: none; cursor: pointer; margin: 10px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    
+    body { 
+      background: #0a0f1e; 
+      color: white; 
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .logo { 
+      font-size: 24px; 
+      font-weight: 800; 
+      color: #22c55e; 
+    }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .nav-login {
+      color: #cbd5e1;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .btn-green {
+      background: #22c55e;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+    .btn-green:hover { background: #16a34a; transform: translateY(-1px); }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 40px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero h1 .green {
+      color: #22c55e;
+    }
+    .hero p {
+      color: #94a3b8;
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 40px;
+    }
+    .btn-large {
+      font-size: 18px;
+      padding: 16px 40px;
+      border-radius: 12px;
+    }
+
+    /* WHY CHOOSE */
+    .why {
+      text-align: center;
+      padding: 60px 20px;
+    }
+    .why h2 {
+      font-size: 32px;
+      font-weight: 700;
+      position: relative;
+      display: inline-block;
+    }
+    .why h2::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #22c55e;
+      display: block;
+      margin: 10px auto 0;
+    }
+
+    /* MOBILE */
+    @media(max-width: 600px) {
+      .hero h1 { font-size: 36px; }
+      .navbar { padding: 10px 0; }
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to WealthX 💰</h1>
-  <p>Grow your wealth with us</p>
-  <a href="/signup.html">Sign Up</a>
-  <a href="/login.html">Login</a>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <div class="logo">Xwealth</div>
+    <div class="nav-right">
+      <a href="/login.html" class="nav-login">Login</a>
+      <a href="/signup.html" class="btn-green">Get Started</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>Invest<br>Smarter with<br><span class="green">Xwealth</span></h1>
+    <p>AI-powered investing platform. Grow your wealth with data-driven decisions.</p>
+    <a href="/signup.html" class="btn-green btn-large">Start Investing Now</a>
+  </div>
+
+  <!-- WHY CHOOSE -->
+  <div class="why">
+    <h2>Why Choose</h2>
+  </div>
 
   <script type="module">
     import { auth } from './src/firebase.js'
     import { onAuthStateChanged } from "firebase/auth";
     
+    // If user is already logged in, send to dashboard
     onAuthStateChanged(auth, (user) => {
-      if (user) {
-        window.location.href = "/dashboard.html"
-      }
+      if (user) window.location.href = "/dashboard.html"
     });
   </script>
 </body>
-</html>
+      </html>
