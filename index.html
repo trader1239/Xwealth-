@@ -11,7 +11,6 @@
       background: #0a0f1e; 
       color: white; 
       min-height: 100vh;
-      padding: 20px;
     }
 
     /* NAVBAR */
@@ -19,7 +18,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 0;
+      padding: 20px 5%;
       max-width: 1200px;
       margin: 0 auto;
     }
@@ -54,7 +53,7 @@
     /* HERO SECTION */
     .hero {
       text-align: center;
-      padding: 80px 20px 40px;
+      padding: 80px 20px 60px;
       max-width: 700px;
       margin: 0 auto;
     }
@@ -79,30 +78,63 @@
       border-radius: 12px;
     }
 
-    /* WHY CHOOSE */
+    /* WHY CHOOSE SECTION */
     .why {
+      padding: 80px 5%;
+      max-width: 1200px;
+      margin: 0 auto;
       text-align: center;
-      padding: 60px 20px;
     }
     .why h2 {
-      font-size: 32px;
+      font-size: 36px;
       font-weight: 700;
+      margin-bottom: 50px;
       position: relative;
       display: inline-block;
     }
     .why h2::after {
       content: '';
-      width: 60px;
-      height: 3px;
+      width: 80px;
+      height: 4px;
       background: #22c55e;
       display: block;
-      margin: 10px auto 0;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .card {
+      background: #111827;
+      padding: 30px 25px;
+      border-radius: 16px;
+      border: 1px solid #1f2937;
+      transition: 0.3s;
+    }
+    .card:hover {
+      border-color: #22c55e;
+      transform: translateY(-5px);
+    }
+    .card-icon {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #22c55e;
+    }
+    .card p {
+      color: #94a3b8;
+      line-height: 1.6;
     }
 
     /* MOBILE */
     @media(max-width: 600px) {
       .hero h1 { font-size: 36px; }
-      .navbar { padding: 10px 0; }
+      .why h2 { font-size: 28px; }
     }
   </style>
 </head>
@@ -126,17 +158,37 @@
 
   <!-- WHY CHOOSE -->
   <div class="why">
-    <h2>Why Choose</h2>
+    <h2>Why Choose Xwealth</h2>
+    <div class="cards">
+      
+      <div class="card">
+        <div class="card-icon">🤖</div>
+        <h3>AI-Powered Insights</h3>
+        <p>Our advanced AI analyzes market trends 24/7 to give you smart investment recommendations that maximize your returns.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">📊</div>
+        <h3>Data-Driven Decisions</h3>
+        <p>Stop guessing. Make confident investment choices backed by real-time data, analytics, and proven strategies.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Bank-Level Security</h3>
+        <p>Your funds and data are protected with military-grade encryption. Invest with peace of mind knowing you're secure.</p>
+      </div>
+
+    </div>
   </div>
 
   <script type="module">
     import { auth } from './src/firebase.js'
     import { onAuthStateChanged } from "firebase/auth";
     
-    // If user is already logged in, send to dashboard
     onAuthStateChanged(auth, (user) => {
       if (user) window.location.href = "/dashboard.html"
     });
   </script>
 </body>
-      </html>
+        </html>
