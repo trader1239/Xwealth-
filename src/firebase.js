@@ -1,18 +1,14 @@
-// src/firebase.js
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
-// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBkF17ZZj0NAJG1nNfJgXtur876Z9ksWYs",
+  apiKey: "AIzaSyC6x2KfV0hFzQ9mN8pL7wR3tY4uI5oP6aS",
   authDomain: "wealthx-5d883.firebaseapp.com",
   projectId: "wealthx-5d883",
-  storageBucket: "wealthx-5d883.firebasestorage.app",
-  messagingSenderId: "310567361740",
-  appId: "1:310567361740:web:4b9c7757677ae7d8eeb669"
+  storageBucket: "wealthx-5d883.appspot.com",
+  messagingSenderId: "123456789012",
+  appId: "1:123456789012:web:abcdef1234567890"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-export { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged };
