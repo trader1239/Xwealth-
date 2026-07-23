@@ -2,45 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WealthX Dashboard</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>WealthX - Dashboard</title>
+  <style>
+    body { font-family: Arial; padding: 30px; background: #0f172a; color: white; }
+    button { padding: 10px 20px; background: #ef4444; color: white; border: none; border-radius: 8px; cursor: pointer; }
+  </style>
 </head>
-<body class="bg-gray-900 text-white flex items-center justify-center min-h-screen">
-
-  <div class="text-center p-8 bg-gray-800 rounded-2xl shadow-lg">
-    <h1 class="text-3xl font-bold mb-4">Welcome to WealthX 🚀</h1>
-    <p id="user-email" class="text-gray-400 mb-6">Loading...</p>
-    <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 px-6 py-2 rounded-lg">Logout</button>
-  </div>
+<body>
+  <h1>Dashboard</h1>
+  <p id="userEmail">Loading...</p>
+  <button id="logoutBtn">Logout</button>
 
   <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-
-    const firebaseConfig = {
-      apiKey: "AIzaSyBkF17ZZj0NAJG1nNfJgXtur876Z9ksWYs",
-      authDomain: "wealthx-5d883.firebaseapp.com",
-      projectId: "wealthx-5d883",
-      storageBucket: "wealthx-5d883.firebasestorage.app",
-      messagingSenderId: "310567361740",
-      appId: "1:310567361740:web:4b9c7757677ae7d8eeb669"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
+    import { auth } from './src/firebase.js'
+    import { onAuthStateChanged, signOut } from "firebase/auth";
+    
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        document.getElementById('user-email').innerText = "Logged in as: " + user.email;
+        document.getElementById('userEmail').textContent = "Logged in: " + user.email
       } else {
-        window.location.href = "login.html"; // kick back to login if not logged in
+        window.location.href = "/login.html"
       }
     });
 
-    document.getElementById('logoutBtn').onclick = () => {
-      signOut(auth).then(() => window.location.href = "login.html");
-    };
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = "/login.html"
+      })
+    })
   </script>
 </body>
-  </html>
+</html>
